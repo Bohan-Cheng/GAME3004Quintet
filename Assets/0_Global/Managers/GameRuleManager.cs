@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameRuleManager : MonoBehaviour
 {
     private static GameRuleManager instance;
-    //public static GameRuleManager Instance { get { return instance; } }
+
+    [Header("Global")]
+    public int Time_Min;
+    public int Time_Sec;
+    public string CurrentLvl;
+
+    [Header("Current Game Status")]
     public uint CurrentDay;
     public uint Score;
-    public bool IsLost;
-    List<GameObject> Enemies = new List<GameObject>();
-    List<GameObject> Turrets = new List<GameObject>();
+    public List<GameObject> Enemies = new List<GameObject>();
+    public List<GameObject> Turrets = new List<GameObject>();
 
     private void Awake()
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5540082069086661249}
   m_Layer: 0
-  m_Name: Turet01
+  m_Name: LaserTurret_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4bf64dae66a6384e8abc058dac59762, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4388441
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4bf64dae66a6384e8abc058dac59762, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.077616215
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4bf64dae66a6384e8abc058dac59762, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26471716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4bf64dae66a6384e8abc058dac59762, type: 3}
       propertyPath: m_LocalRotation.w
@@ -111,15 +111,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9cd2fc318f05d32488acbcd002a80dea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4388441
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9cd2fc318f05d32488acbcd002a80dea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.077616215
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9cd2fc318f05d32488acbcd002a80dea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26471716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9cd2fc318f05d32488acbcd002a80dea, type: 3}
       propertyPath: m_LocalRotation.w
