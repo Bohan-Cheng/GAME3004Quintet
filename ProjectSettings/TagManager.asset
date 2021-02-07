@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
+  - Spawner
+  - Base
+  - Enemy
   layers:
   - Default
   - TransparentFX
