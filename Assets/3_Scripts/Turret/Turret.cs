@@ -80,7 +80,7 @@ public class Turret : MonoBehaviour
 				if (lineRenderer.enabled)
 				{
 					lineRenderer.enabled = false;
-					impactEffect.Stop();
+					//impactEffect.Stop();
 					impactLight.enabled = false;
 				}
 			}
@@ -123,7 +123,7 @@ public class Turret : MonoBehaviour
 		if (!lineRenderer.enabled)
 		{
 			lineRenderer.enabled = true;
-			impactEffect.Play();
+			//impactEffect.Play();
 			impactLight.enabled = true;
 		}
 
@@ -132,9 +132,9 @@ public class Turret : MonoBehaviour
 
 		Vector3 dir = firePoint.position - target.position;
 
-		impactEffect.transform.position = target.position + dir.normalized;
+		//impactEffect.transform.position = target.position + dir.normalized;
 
-		impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+		//impactEffect.transform.rotation = Quaternion.LookRotation(dir);
 	}
 
 	void Shoot()
@@ -142,7 +142,7 @@ public class Turret : MonoBehaviour
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-		if (bullet != null)
-			bullet.Seek(target);
+		//if (bullet != null)
+		//	bullet.Seek(target);
 	}
 }

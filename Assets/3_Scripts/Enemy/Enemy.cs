@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
 	public int worth = 50;
 
-	public GameObject deathEffect;
+	//public GameObject deathEffect;
 
 	//[Header("Unity Stuff")]
 	//public Image healthBar;
@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
 	public void TakeDamage(float amount)
 	{
 		health -= amount;
-
 		//healthBar.fillAmount = health / startHealth;
 
 		if (health <= 0 && !isDead)
@@ -49,8 +48,8 @@ public class Enemy : MonoBehaviour
 		isDead = true;
 
 
-		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(effect, 5f);
+		//GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+		//Destroy(effect, 5f);
 
 
 		Destroy(gameObject);

@@ -7,11 +7,10 @@ public class zombieBehaviour : MonoBehaviour
     GameObject targetRef;
     Transform targetTransform;
     Vector3 currDir;
-    float moveSpeed;
+    [SerializeField]float moveSpeed = 15.0f;
     
     void Start()
     {
-        moveSpeed = 0.25f;
         targetRef = GameObject.FindGameObjectWithTag("Base");
         targetTransform = targetRef.GetComponent<Transform>();
     }
@@ -34,6 +33,6 @@ public class zombieBehaviour : MonoBehaviour
 
     void moveCharacter(Vector3 direction)
      {
-        transform.position += currDir.normalized * moveSpeed;
+        transform.position += currDir.normalized * moveSpeed * Time.deltaTime;
      }
 }
