@@ -9,12 +9,13 @@
 *
 * Description        : Load scenes with button press.
 *
-* Last modified      : 21/02/04
+* Last modified      : 21/02/07
 *
 * Revision History   :
 *
 * Date        Author Ref    Revision (Date in YYYYMMDD format) 
 * 21/02/04    David Gasinec        Created script. 
+* 21/02/06    David Gasinec        Added further button funtionality.
 *
 *
 |**********************************************************************/
@@ -46,8 +47,7 @@ public class UIButtonManager : MonoBehaviour
     private IEnumerator WaitForSceneLoadPlayGame()
     {
         yield return new WaitForSeconds(0.5f);
-        // SceneManager.LoadScene("GameLevelScene");
-        Debug.Log("You have pressed the play button!");
+        SceneManager.LoadScene("Map_Bohan");
     }
 
     public void OnButtonClickedPlay()
@@ -74,8 +74,7 @@ public class UIButtonManager : MonoBehaviour
     private IEnumerator WaitForSettings()
     {
         yield return new WaitForSeconds(0.5f);
-        //SceneManager.LoadScene("");
-        Debug.Log("You have pressed settings.");
+        SceneManager.LoadScene("Map_Options");
     }
 
     public void OnSettingsButtonClicked()
@@ -100,10 +99,18 @@ public class UIButtonManager : MonoBehaviour
     }
 
 
+    //Title//
 
+    private IEnumerator WaitForStart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Map_Menu");
+    }
 
-
-
+    public void OnStartButtonClicked()
+    {
+        StartCoroutine(WaitForStart());
+    }
 
 
 
@@ -112,8 +119,7 @@ public class UIButtonManager : MonoBehaviour
     private IEnumerator WaitForPlayAgain()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("You have pressed play again.");
-
+        SceneManager.LoadScene("Map_Bohan");
         // Note* this function will not work in the editor. 
         Application.Quit();
     }
@@ -134,6 +140,19 @@ public class UIButtonManager : MonoBehaviour
     public void OnBackToMainButtonClicked()
     {
         StartCoroutine(WaitForBackToMain());
+    }
+
+    //Options
+    private IEnumerator WaitForBackToMainOptions()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("You have pressed back to main menu.");
+        SceneManager.LoadScene("Map_Menu");
+    }
+
+    public void OnBackToMainOptionsButtonClicked()
+    {
+        StartCoroutine(WaitForBackToMainOptions());
     }
 
 }
