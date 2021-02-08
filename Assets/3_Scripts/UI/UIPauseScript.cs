@@ -27,11 +27,11 @@ public class UIPauseScript : MonoBehaviour
 {
 
     public static bool isPaused = false;
-    public GameObject pauseMenuCanvas;
+    public GameObject pauseMenuPanel;
     
     void Start()
     {
-        
+        pauseMenuPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,18 +48,19 @@ public class UIPauseScript : MonoBehaviour
                 Pause();          
             }
         }
+
     }
 
    public void Resume()
     {
-        pauseMenuCanvas.SetActive(false);
+        pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
 
     public void Pause()
     {
-        pauseMenuCanvas.SetActive(true);
+        pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
