@@ -27,7 +27,11 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonManager : MonoBehaviour
 {
+    public GameObject pauseMenu;
+    public static bool isPaused = false; 
+
     //Title Scene - yet to be implemented.
+
 
     /** Adds delay so the sound can play and isn't cut off. */
     private IEnumerator WaitForMainMenuStart()
@@ -141,6 +145,38 @@ public class UIButtonManager : MonoBehaviour
     {
         StartCoroutine(WaitForBackToMain());
     }
+
+    //Pause button on Game Screen
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false; 
+    }
+
+    public void OnPausedButtonPressed()
+    {
+        
+        if(isPaused)
+        {
+            Resume();
+            Debug.Log("Game unpaused");
+        }
+        else
+        {
+            Pause();
+            Debug.Log("Game Paused");
+        }
+
+    }
+
 
     //Options
     private IEnumerator WaitForBackToMainOptions()

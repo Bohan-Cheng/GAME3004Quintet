@@ -34,24 +34,26 @@ public class UIPauseScript : MonoBehaviour
         pauseMenuPanel.SetActive(false);
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
+            if (isPaused)
             {
                 Resume();
+                Debug.Log("pressed unpause");
             }
             else
             {
-                Pause();          
+                Pause();
+                Debug.Log("pressed pause");
             }
         }
 
     }
 
-   public void Resume()
+    public void Resume()
     {
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
