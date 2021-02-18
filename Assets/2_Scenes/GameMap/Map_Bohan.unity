@@ -156,11 +156,11 @@ RectTransform:
   m_Children:
   - {fileID: 1500184328}
   m_Father: {fileID: 1130027985}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66.1206, y: 172.78}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -66.1206, y: -17.220001}
   m_SizeDelta: {x: 70, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32779953
@@ -282,7 +282,6 @@ GameObject:
   - component: {fileID: 109052836}
   - component: {fileID: 109052835}
   - component: {fileID: 109052834}
-  - component: {fileID: 109052837}
   m_Layer: 5
   m_Name: mainmenu
   m_TagString: Untagged
@@ -354,7 +353,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109052837}
+      - m_Target: {fileID: 301037989}
         m_TargetAssemblyTypeName: UIPauseScript, Assembly-CSharp
         m_MethodName: LoadMainMenu
         m_Mode: 1
@@ -404,19 +403,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109052832}
   m_CullTransparentMesh: 1
---- !u!114 &109052837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109052832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d602ee297d5d13419329efb6465fbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuPanel: {fileID: 449198286}
 --- !u!1001 &122174326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1049,7 +1035,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1124,13 +1110,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1687764741}
-  - {fileID: 534164538}
   - {fileID: 1730878138}
   - {fileID: 325053249}
   - {fileID: 952530467}
   - {fileID: 2002850434}
   - {fileID: 1975449291}
   - {fileID: 837893007}
+  - {fileID: 534164538}
   m_Father: {fileID: 1130027985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1452,16 +1438,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457818373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1130027985}
-  m_RootOrder: 2
+  m_Father: {fileID: 534164538}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -69, y: -71}
+  m_AnchoredPosition: {x: -56.784058, y: -58.13562}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457818375
@@ -1592,7 +1578,6 @@ GameObject:
   - component: {fileID: 530857579}
   - component: {fileID: 530857578}
   - component: {fileID: 530857577}
-  - component: {fileID: 530857580}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -1664,7 +1649,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530857580}
+      - m_Target: {fileID: 301037989}
         m_TargetAssemblyTypeName: UIPauseScript, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -1714,19 +1699,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530857575}
   m_CullTransparentMesh: 1
---- !u!114 &530857580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530857575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d602ee297d5d13419329efb6465fbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuPanel: {fileID: 449198286}
 --- !u!1 &534164537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,9 +1727,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 457818374}
   m_Father: {fileID: 333472246}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2432,7 +2405,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2673,7 +2646,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2954,7 +2927,6 @@ RectTransform:
   m_Children:
   - {fileID: 1185398999}
   - {fileID: 333472246}
-  - {fileID: 457818374}
   - {fileID: 32779952}
   m_Father: {fileID: 0}
   m_RootOrder: 32
@@ -3258,7 +3230,6 @@ GameObject:
   - component: {fileID: 1254433986}
   - component: {fileID: 1254433985}
   - component: {fileID: 1254433984}
-  - component: {fileID: 1254433987}
   m_Layer: 5
   m_Name: quit
   m_TagString: Untagged
@@ -3330,7 +3301,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1254433987}
+      - m_Target: {fileID: 301037989}
         m_TargetAssemblyTypeName: UIPauseScript, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -3380,19 +3351,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254433982}
   m_CullTransparentMesh: 1
---- !u!114 &1254433987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254433982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d602ee297d5d13419329efb6465fbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuPanel: {fileID: 449198286}
 --- !u!1001 &1325665105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4566,7 +4524,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4917,7 +4875,6 @@ GameObject:
   - component: {fileID: 1892207804}
   - component: {fileID: 1892207803}
   - component: {fileID: 1892207805}
-  - component: {fileID: 1892207806}
   m_Layer: 5
   m_Name: Panel(open-close)
   m_TagString: Untagged
@@ -5008,19 +4965,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1892207806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892207801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd13bd33c8566f4f9594c4223800f63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 0}
 --- !u!1001 &1941087917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5108,7 +5052,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5266,7 +5210,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333472246}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

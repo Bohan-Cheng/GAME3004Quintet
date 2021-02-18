@@ -39,15 +39,15 @@ public class UIPauseScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
-            {
-                Resume();
-                Debug.Log("pressed unpause");
-            }
-            else
+            if (!isPaused)
             {
                 Pause();
-                Debug.Log("pressed pause");
+                Debug.Log("pressed unpause escape key");
+            }
+            else if (isPaused)
+            {
+                Resume();
+                Debug.Log("pressed pause escape key");
             }
         }
 

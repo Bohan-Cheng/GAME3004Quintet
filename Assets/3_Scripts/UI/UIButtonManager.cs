@@ -9,7 +9,7 @@
 *
 * Description        : Load scenes with button press.
 *
-* Last modified      : 21/02/07
+* Last modified      : 21/02/18
 *
 * Revision History   :
 *
@@ -167,12 +167,12 @@ public class UIButtonManager : MonoBehaviour
         if(isPaused)
         {
             Resume();
-            Debug.Log("Game unpaused");
+            Debug.Log("Game unpaused button");
         }
         else
         {
             Pause();
-            Debug.Log("Game Paused");
+            Debug.Log("Game Paused button");
         }
 
     }
