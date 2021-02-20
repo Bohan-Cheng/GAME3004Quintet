@@ -1,6 +1,8 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.AI;
 
 public class zombieBehaviour : MonoBehaviour
 {
@@ -8,11 +10,17 @@ public class zombieBehaviour : MonoBehaviour
     Transform targetTransform;
     Vector3 currDir;
     [SerializeField]float moveSpeed = 15.0f;
-    
+
+
+    public NavMeshAgent agent;
+
     void Start()
     {
         targetRef = GameObject.FindGameObjectWithTag("Base");
         targetTransform = targetRef.GetComponent<Transform>();
+
+
+        agent.SetDestination(targetTransform.position);
     }
 
     // Update is called once per frame
@@ -27,7 +35,8 @@ public class zombieBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveCharacter(currDir);
+        //moveCharacter(currDir);
+
     }
 
 
