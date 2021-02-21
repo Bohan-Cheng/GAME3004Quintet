@@ -28,7 +28,12 @@ using UnityEngine.SceneManagement;
 public class UIButtonManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public static bool isPaused = false; 
+    public static bool isPaused = false;
+
+    private void Start()
+    {
+        
+    }
 
     //Title Scene - yet to be implemented.
 
@@ -107,6 +112,7 @@ public class UIButtonManager : MonoBehaviour
 
     private IEnumerator WaitForStart()
     {
+        
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Map_Menu");
     }
