@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 30;
     public float lifeTime = 3;
+    public ParticleSystem Explosion;
 
     private void Start()
     {
@@ -16,13 +17,20 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 
+    private void Update()
+    {
+        Destroy(gameObject, 3f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player" && other.tag == "Enemy")
         {
             print("hit " + other.name + "!");
+            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
             other.GetComponent<Enemy>().TakeDamage(20);
             Destroy(gameObject);
         }
+
     }
 }

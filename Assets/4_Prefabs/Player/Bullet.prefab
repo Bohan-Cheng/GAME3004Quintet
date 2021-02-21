@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5828995127643612874}
   - component: {fileID: 8393882527550860524}
   - component: {fileID: 6022902440151503125}
-  - component: {fileID: 4074413780288092360}
   - component: {fileID: 733248306514447826}
   - component: {fileID: 4736296666300895732}
   m_Layer: 0
@@ -98,20 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4074413780288092360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055225680582771299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934b32b6caf459e47bf039acc3276b66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 30
-  lifeTime: 3
 --- !u!54 &733248306514447826
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,6 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13672561b55cc014cbdd27a8e813b68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  damage: 50
-  explosionRadius: 8
+  bulletSpeed: 30
+  lifeTime: 3
+  Explosion: {fileID: 1310100252942775819, guid: 15b30eb1f9a8e244da1931adecdb0dd9, type: 3}
