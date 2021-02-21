@@ -16,6 +16,11 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 
+    private void Update()
+    {
+        Destroy(gameObject, 3f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player" && other.tag == "Enemy")
@@ -24,5 +29,6 @@ public class Bullet : MonoBehaviour
             other.GetComponent<Enemy>().TakeDamage(20);
             Destroy(gameObject);
         }
+
     }
 }
