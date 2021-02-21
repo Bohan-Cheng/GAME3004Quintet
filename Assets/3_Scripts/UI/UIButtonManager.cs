@@ -9,7 +9,7 @@
 *
 * Description        : Load scenes with button press.
 *
-* Last modified      : 21/02/07
+* Last modified      : 21/02/18
 *
 * Revision History   :
 *
@@ -27,7 +27,16 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonManager : MonoBehaviour
 {
+    public GameObject pauseMenu;
+    public static bool isPaused = false;
+
+    private void Start()
+    {
+        
+    }
+
     //Title Scene - yet to be implemented.
+
 
     /** Adds delay so the sound can play and isn't cut off. */
     private IEnumerator WaitForMainMenuStart()
@@ -103,6 +112,7 @@ public class UIButtonManager : MonoBehaviour
 
     private IEnumerator WaitForStart()
     {
+        
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Map_Menu");
     }
@@ -141,6 +151,38 @@ public class UIButtonManager : MonoBehaviour
     {
         StartCoroutine(WaitForBackToMain());
     }
+
+    //Pause button on Game Screen
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false; 
+    }
+
+    public void OnPausedButtonPressed()
+    {
+        
+        if(isPaused)
+        {
+            Resume();
+            Debug.Log("Game unpaused button");
+        }
+        else
+        {
+            Pause();
+            Debug.Log("Game Paused button");
+        }
+
+    }
+
 
     //Options
     private IEnumerator WaitForBackToMainOptions()

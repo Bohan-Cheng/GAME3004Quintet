@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Enemy
   - Bullet
+  - resource
   layers:
   - Default
   - TransparentFX
