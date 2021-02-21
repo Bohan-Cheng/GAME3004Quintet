@@ -20,7 +20,7 @@ public class Script_Spawner : MonoBehaviour
         CenterPos = new Vector3(SpawnVolume.position.x, SpawnVolume.position.y - SpawnVolume.localScale.y/2, SpawnVolume.position.z);
         MaxXPos = SpawnVolume.localScale.x/2;
         MaxZPos = SpawnVolume.localScale.z/2;
-        //Destroy(SpawnVolume.gameObject);
+        Destroy(SpawnVolume.gameObject);
         SpawnMana = FindObjectOfType<Script_SpawnManager>();
         StartCoroutine(SpawnEnemy());
     }
