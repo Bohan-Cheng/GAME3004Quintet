@@ -29,6 +29,8 @@ public class Bullet : MonoBehaviour
             print("hit " + other.name + "!");
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
             other.GetComponent<Enemy>().TakeDamage(20);
+            ScoreManager.playerScore += 7;
+            ResourceCounter.resourceNumber += 5;
             Destroy(gameObject);
         }
 

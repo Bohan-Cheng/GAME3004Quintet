@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FuelBehaviour : MonoBehaviour
 {
-    public static int fuelNumber = 100;
+    public static float fuelNumber = 500f;
     public Text fuel;
 
     private void Start()
@@ -17,8 +17,15 @@ public class FuelBehaviour : MonoBehaviour
     {
         if(fuelNumber <= 0)
         {
-            fuelNumber = 100;
+            print("Lights out!");
         }
+
+        ReduceFuel();
         fuel.text = "" + fuelNumber;
+    }
+
+    void ReduceFuel()
+    {
+        fuelNumber -= Time.deltaTime;
     }
 }
