@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ScoreManager : MonoBehaviour
                         woodValue,
                         stoneValue;
     public static int playerHealthPoints;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,12 @@ public class ScoreManager : MonoBehaviour
         woodValue = 0f;
         stoneValue = 0f;
         playerHealthPoints = 100;
+        scoreText.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = playerScore.ToString();
     }
 }

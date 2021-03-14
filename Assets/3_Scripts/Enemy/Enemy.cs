@@ -35,6 +35,8 @@ public class Enemy : MonoBehaviour
 		if (health <= 0 && !isDead)
 		{
 			Die();
+			FuelBehaviour.fuelNumber += 5.0f;
+			ScoreManager.playerScore += 7;
 		}
 	}
 
