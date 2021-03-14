@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8393882527550860524}
   - component: {fileID: 6022902440151503125}
   - component: {fileID: 733248306514447826}
-  - component: {fileID: 4736296666300895732}
   - component: {fileID: 7678631579154876202}
+  - component: {fileID: 6503228947098791338}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: RedBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2055225680582771299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.7, y: -3.031, z: -2.441}
-  m_LocalScale: {x: 0.27972, y: 0.27972, z: 0.27972}
+  m_LocalScale: {x: 0.46164992, y: 0.46164992, z: 0.46164992}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb57d5620f6ff5543adb86d55c888006, type: 2}
+  - {fileID: 2100000, guid: 7486d1458fed2ea4e99aaf2f7e2a5d36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,21 +114,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4736296666300895732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055225680582771299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13672561b55cc014cbdd27a8e813b68a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 30
-  lifeTime: 3
-  Explosion: {fileID: 1310100252942775819, guid: 15b30eb1f9a8e244da1931adecdb0dd9, type: 3}
 --- !u!96 &7678631579154876202
 TrailRenderer:
   serializedVersion: 2
@@ -200,7 +185,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0.18142554, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -236,3 +221,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &6503228947098791338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055225680582771299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c5f6e41fd4b60419d3053a8e7d4782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 30
+  lifeTime: 3
+  Explosion: {fileID: 1310100252942775819, guid: 15b30eb1f9a8e244da1931adecdb0dd9, type: 3}

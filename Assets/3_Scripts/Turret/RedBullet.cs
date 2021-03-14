@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class RedBullet : MonoBehaviour
 {
     public float bulletSpeed = 30;
     public float lifeTime = 3;
@@ -28,10 +28,7 @@ public class Bullet : MonoBehaviour
         {
             print("hit " + other.name + "!");
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-            other.GetComponent<Enemy>().TakeDamage(20);
-            ScoreManager.playerScore += 7;
-            ResourceCounter.resourceNumber += 5;
-            other.GetComponent<Enemy>().speed = 5;
+            other.GetComponent<Enemy>().TakeDamage(50);
             Destroy(gameObject);
         }
 
