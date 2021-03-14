@@ -5,6 +5,7 @@ using UnityEngine;
 public class Script_Spawner : MonoBehaviour
 {
     [SerializeField] GameObject EnemyPrefab;
+    [SerializeField] GameObject Low_Poli_Enemy_Prefab;
     [SerializeField] float minDelay;
     [SerializeField] float MaxDelay;
     Transform SpawnVolume;
@@ -31,7 +32,17 @@ public class Script_Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minDelay, MaxDelay));
             Vector3 Pos = new Vector3(Random.Range(-MaxXPos, MaxXPos), 0.0f, Random.Range(-MaxZPos, MaxZPos));
-            Instantiate(EnemyPrefab, CenterPos + Pos, new Quaternion());
+            
+
+            if (Random.Range(1,2) == 2)
+            {
+                Instantiate(EnemyPrefab, CenterPos + Pos, new Quaternion());
+            }
+            else
+            {
+                Instantiate(Low_Poli_Enemy_Prefab, CenterPos + Pos, new Quaternion());
+            }
+            
         }
         
     }
