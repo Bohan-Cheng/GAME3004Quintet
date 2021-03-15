@@ -3329,7 +3329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8e540d91efdc64aa22905d8b2d72fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   nightRest: 5
 --- !u!1001 &759264906
 PrefabInstance:
