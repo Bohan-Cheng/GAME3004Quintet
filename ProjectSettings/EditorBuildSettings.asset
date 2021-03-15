@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/2_Scenes/UIMap/Map_Gameover.unity
     guid: 6d0b261b881192a4d9c5a7dab2b9b30f
   - enabled: 1
-    path: Assets/2_Scenes/GameMap/Map_Bohan.unity
-    guid: 4cc8ba7980fa5dd49b7898e251a17539
+    path: Assets/2_Scenes/UIMap/Map_Pause.unity
+    guid: 2ee25b0ab3977a44aa89b9016270f91e
   - enabled: 1
     path: Assets/2_Scenes/UIMap/Map_Options.unity
     guid: d4cbdd8e1b18ff547901d2f3861f8eca
+  - enabled: 1
+    path: Assets/2_Scenes/GameMap/Map_Bohan.unity
+    guid: 4cc8ba7980fa5dd49b7898e251a17539
   m_configObjects: {}
