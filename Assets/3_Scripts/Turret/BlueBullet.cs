@@ -6,6 +6,7 @@ public class BlueBullet : MonoBehaviour
 {
     public float bulletSpeed = 30;
     public float lifeTime = 3;
+    public float slowSpeed = 0.5f;
     public ParticleSystem Explosion;
 
     private void Start()
@@ -29,7 +30,7 @@ public class BlueBullet : MonoBehaviour
             print("hit " + other.name + "!");
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
             other.GetComponent<Enemy>().TakeDamage(10);
-            other.GetComponent<zombieBehaviour>().agent.speed = 1;
+            other.GetComponent<zombieBehaviour>().agent.speed = slowSpeed;
             Destroy(gameObject);
         }
 
