@@ -73,38 +73,40 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (target == null)
+		if (GetComponent<S_ItemInfo>().HasPower)
 		{
+			if (target == null)
+			{
+				if (useLaser)
+				{
+					if (lineRenderer.enabled)
+					{
+						lineRenderer.enabled = false;
+						//impactEffect.Stop();
+						impactLight.enabled = false;
+					}
+				}
+
+				return;
+			}
+
+			LockOnTarget();
+
 			if (useLaser)
 			{
-				if (lineRenderer.enabled)
-				{
-					lineRenderer.enabled = false;
-					//impactEffect.Stop();
-					impactLight.enabled = false;
-				}
+				Laser();
 			}
-
-			return;
-		}
-
-		LockOnTarget();
-
-		if (useLaser)
-		{
-			Laser();
-		}
-		else
-		{
-			if (fireCountdown <= 0f)
+			else
 			{
-				Shoot();
-				fireCountdown = 1f / fireRate;
+				if (fireCountdown <= 0f)
+				{
+					Shoot();
+					fireCountdown = 1f / fireRate;
+				}
+
+				fireCountdown -= Time.deltaTime;
 			}
-
-			fireCountdown -= Time.deltaTime;
 		}
-
 	}
 
 	void LockOnTarget()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FuelBehaviour : MonoBehaviour
 {
-    public static int Electricity = 10;
+    public static int Electricity = 0;
     public Text ElectricityText;
 
     private void Start()
@@ -17,7 +17,7 @@ public class FuelBehaviour : MonoBehaviour
     {
         if(Electricity <= 0)
         {
-            print("Lights out!");
+            //print("Lights out!");
         }
 
         ReduceFuel();
@@ -27,5 +27,14 @@ public class FuelBehaviour : MonoBehaviour
     void ReduceFuel()
     {
         //fuelNumber -= Time.deltaTime;
+    }
+
+    public static bool UsePower(int power)
+    {
+        if(power <= Electricity)
+        {
+            return true;
+        }
+        return false;
     }
 }

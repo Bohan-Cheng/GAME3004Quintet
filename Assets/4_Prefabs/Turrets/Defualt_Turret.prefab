@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 150
+  EnergyCost: 5
+  HasPower: 0
 --- !u!1001 &4448356682421297543
 PrefabInstance:
   m_ObjectHideFlags: 0

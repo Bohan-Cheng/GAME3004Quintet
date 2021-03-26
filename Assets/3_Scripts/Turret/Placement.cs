@@ -26,7 +26,7 @@ public class Placement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        
         if(Input.GetMouseButtonUp(0))
         {
             if(!IsValid && !IsPlacedDown)
@@ -37,6 +37,10 @@ public class Placement : MonoBehaviour
             {
                 IsPlacedDown = true;
                 transform.parent.GetComponent<S_ItemInfo>().BuyItem();
+            }
+            if(IsPlacedDown)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
             }
         }
     }
