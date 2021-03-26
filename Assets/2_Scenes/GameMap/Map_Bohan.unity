@@ -3541,6 +3541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserTurret_Black
       objectReference: {fileID: 0}
+    - target: {fileID: 7890237741755972846, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
+      propertyPath: EnergyCost
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
 --- !u!1001 &682156106
