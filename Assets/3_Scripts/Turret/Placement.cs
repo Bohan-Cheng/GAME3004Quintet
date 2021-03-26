@@ -7,7 +7,7 @@ public class Placement : MonoBehaviour
     [SerializeField] Material GoodMat;
     [SerializeField] Material BadMat;
     [SerializeField] bool IsValid = true;
-    [SerializeField] bool IsPlacedDown = false;
+    public bool IsPlacedDown = false;
 
     void Awake()
     {

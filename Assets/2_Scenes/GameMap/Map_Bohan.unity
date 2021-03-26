@@ -4224,9 +4224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '89
-
-'
+  m_Text: 10
 --- !u!222 &837893009
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4247,7 +4245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b043c62923e0242b0f6ee459947421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: {fileID: 837893008}
+  ElectricityText: {fileID: 837893008}
 --- !u!1 &850340737
 GameObject:
   m_ObjectHideFlags: 0
