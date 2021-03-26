@@ -5,21 +5,33 @@ using UnityEngine.UI;
 
 public class InventoryButtons : MonoBehaviour
 {
-   
+    DragDropSystem DDS;
+    [SerializeField] List<GameObject> Items;
 
     private void Start()
     {
-        
+        DDS = FindObjectOfType<DragDropSystem>();
     }
+
     public void OnSlot1Clicked()
     {
-        Debug.Log("Slot clicked.");
-        FuelBehaviour.fuelNumber -= 7;
+        DDS.PlacementItem = Instantiate(Items[0]);
     }
-
     public void OnSlot2Clicked()
     {
-
+        DDS.PlacementItem = Instantiate(Items[1]);
     }
-  
+    public void OnSlot3Clicked()
+    {
+        DDS.PlacementItem = Instantiate(Items[2]);
+    }
+    public void OnSlot4Clicked()
+    {
+        DDS.PlacementItem = Instantiate(Items[3]);
+    }
+    public void OnSlot5Clicked()
+    {
+        DDS.PlacementItem = Instantiate(Items[4]);
+    }
+
 }
