@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5490282606819741799}
   - component: {fileID: 5439465625544113660}
+  - component: {fileID: 4140472548220937328}
   m_Layer: 0
   m_Name: Genorator
   m_TagString: Untagged
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   P: {fileID: 7487624667956300718}
+--- !u!114 &4140472548220937328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490282606819741796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50f2d2a32a5b364aa341ab44f074f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4919286027240130424
 PrefabInstance:
   m_ObjectHideFlags: 0

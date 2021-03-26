@@ -26,16 +26,17 @@ public class Placement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<MeshRenderer>().enabled = false;
         if(Input.GetMouseButtonUp(0))
         {
             if(!IsValid && !IsPlacedDown)
             {
                 Destroy(transform.parent.gameObject);
             }
-            else
+            else if (IsValid && !IsPlacedDown)
             {
-                GetComponent<MeshRenderer>().enabled = false;
                 IsPlacedDown = true;
+                transform.parent.GetComponent<S_ItemInfo>().BuyItem();
             }
         }
     }
