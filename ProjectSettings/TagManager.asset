@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Bullet
   - resource
+  - RangeVisualizer
   layers:
   - Default
   - TransparentFX
