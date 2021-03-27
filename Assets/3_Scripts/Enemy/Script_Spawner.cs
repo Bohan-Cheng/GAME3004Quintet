@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Script_Spawner : MonoBehaviour
 {
+
+
+
+
     [SerializeField] GameObject EnemyPrefab;
     [SerializeField] GameObject Low_Poli_Enemy_Prefab;
     [SerializeField] GameObject BOSS;
@@ -14,7 +18,7 @@ public class Script_Spawner : MonoBehaviour
     Vector3 CenterPos;
     float MaxXPos;
     float MaxZPos;
-    int waveNum = 1;
+    public int waveNum = 1;
     bool keepSpawning = true;
     int wave1 =  2;
     int wave2 = 5;

@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class LevelState : ScriptableObject
 {
-    public GameObject[] enemies;
-    public GameObject[] turrets;
+    public int currentWave;
+
 }
