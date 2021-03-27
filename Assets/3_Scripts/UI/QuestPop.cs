@@ -8,10 +8,15 @@ public class QuestPop : MonoBehaviour
     public GameObject questPanel;
     Animator animator;
 
+    bool playedTurrets, playedBoss;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = questPanel.GetComponent<Animator>();
+
+        playedTurrets = false; 
+        playedBoss = false;
     }
 
     // Update is called once per frame
@@ -21,13 +26,15 @@ public class QuestPop : MonoBehaviour
         {
             PlayAnimationText();
         }
-        if (Quests.killedBoss == true && Quests.playedBoss == false)
+        if (Quests.killedBoss == true && playedBoss == false)
         {
             PlayAnimationText();
+            playedBoss = true;
         }
-        if (Quests.placedTurrets >= 10 && Quests.playedTurrets == false)
+        if (Quests.placedTurrets >= 10 && playedTurrets == false)
         {
             PlayAnimationText();
+            playedTurrets = true;
         }
     }
 
