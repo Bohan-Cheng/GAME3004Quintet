@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
 			Die();
 			FuelBehaviour.fuelNumber += 5.0f;
 			ScoreManager.playerScore += 7;
+			Quests.enemyCount += 1;
 		}
 	}
 
@@ -48,7 +49,7 @@ public class Enemy : MonoBehaviour
 	void Die()
 	{
 		isDead = true;
-
+		Quests.killedBoss = true; 
 
 		//GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
 		//Destroy(effect, 5f);

@@ -28,6 +28,7 @@ public class DragDropSystem : MonoBehaviour
                     GameObject Item = SpawnItems[Random.Range(0, SpawnItems.Count)];
                     PlacementItem = Instantiate(Item, HitPosition, new Quaternion());
                     PlacementItem.transform.Rotate(Vector3.up, Random.Range(0, 360));
+                    Quests.placedTurrets += 1;
                 }
             }
             if (Input.GetKeyUp(KeyCode.Mouse0))
