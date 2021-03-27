@@ -3481,6 +3481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 864826906105338370, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
+      propertyPath: useLaser
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 980067937612596539, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.57
@@ -3540,6 +3544,10 @@ PrefabInstance:
     - target: {fileID: 7882820195712338625, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
       propertyPath: m_Name
       value: LaserTurret_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890237741755972846, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
+      propertyPath: HasPower
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7890237741755972846, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
       propertyPath: EnergyCost
@@ -7115,6 +7123,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459794, guid: 4a01cd5987c95e14fbbc6975d9e0f556, type: 3}
   m_PrefabInstance: {fileID: 2062523851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672164341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672164336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c181875c40046e4080af6e803314a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1001 &1675058602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8667,6 +8688,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 437676, guid: f829a3924d5cba74398dd6c15ca04397, type: 3}
   m_PrefabInstance: {fileID: 1483030699}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2013340293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013340288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c181875c40046e4080af6e803314a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1 &2020979689
 GameObject:
   m_ObjectHideFlags: 0
