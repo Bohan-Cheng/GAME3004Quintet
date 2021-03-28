@@ -48,6 +48,12 @@ public class Enemy : MonoBehaviour
 		GetComponent<NavMeshAgent>().isStopped = true;
     }
 
+	public void StopAttack()
+	{
+		isAttacking = false;
+		GetComponent<NavMeshAgent>().isStopped = false;
+	}
+
 	public void Slow(float pct)
 	{
 		speed = startSpeed * (1f - pct);
