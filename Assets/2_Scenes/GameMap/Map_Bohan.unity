@@ -9020,6 +9020,7 @@ GameObject:
   - component: {fileID: 2002850434}
   - component: {fileID: 2002850436}
   - component: {fileID: 2002850435}
+  - component: {fileID: 2002850437}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -9088,6 +9089,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002850433}
   m_CullTransparentMesh: 1
+--- !u!114 &2002850437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002850433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35ea41f7b9d15a4b8e94876b2ed15ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainBasic: {fileID: 2013340293}
+  HealthText: {fileID: 2002850435}
 --- !u!1 &2013340288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 137928, guid: f829a3924d5cba74398dd6c15ca04397, type: 3}
