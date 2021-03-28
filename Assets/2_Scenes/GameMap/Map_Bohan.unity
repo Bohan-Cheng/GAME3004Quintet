@@ -1373,6 +1373,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $150
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35129e38db3780e4299ee5d1bcbf7756, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3514,6 +3518,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $600
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3423ad124c1203f4baa8aeaf385221af, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5642,6 +5650,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $250
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b92095d448f92cf4c9dc78ccbcfdeb8d, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6216,6 +6228,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $1200
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfdc35964b622ce42823ac9ac71a7525, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7885,6 +7901,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $80
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af01fe4a44ed31442a7205dd69f7d596, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9811,6 +9831,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: $350
       objectReference: {fileID: 0}
+    - target: {fileID: 4402172664470518422, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af01fe4a44ed31442a7205dd69f7d596, type: 3}
     - target: {fileID: 4402172664686792992, guid: e47534b41397c2140a5c582a0bd92144, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
