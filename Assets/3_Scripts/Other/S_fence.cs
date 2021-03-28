@@ -7,6 +7,7 @@ public class S_fence : MonoBehaviour
     public float fenceHealth;
     public bool fenceAlive = true;
     public float attackDelay;
+    GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class S_fence : MonoBehaviour
     {
         if (fenceHealth <= 0)
         {
+            enemy.GetComponent<Enemy>().StopAttack();
             Destroy(gameObject);
             fenceAlive = false;
         }
@@ -47,6 +49,7 @@ public class S_fence : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            enemy = other.gameObject;
             other.GetComponent<Enemy>().DoAttack();
             StartCoroutine(GetDamage());
         }

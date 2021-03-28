@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_ItemInfo : MonoBehaviour
 {
@@ -8,11 +9,17 @@ public class S_ItemInfo : MonoBehaviour
     [SerializeField] int EnergyCost = 8;
     public bool HasPower = false;
 
+    public float Health = 100;
+    public GameObject HealthUI;
+    public Slider HealthSlider;
+    public bool TurretAlive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!EnoughForItem() || !FuelBehaviour.UsePower(EnergyCost))
+        HealthSlider.value = Health;
+
+        if (!EnoughForItem() || !FuelBehaviour.UsePower(EnergyCost))
         {
             Destroy(gameObject);
         }
@@ -29,6 +36,7 @@ public class S_ItemInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HealthSlider.value = Health;
     }
 
     public void BuyItem()
@@ -42,4 +50,6 @@ public class S_ItemInfo : MonoBehaviour
     {
         return ResourceCounter.resourceNumber >= Cost;
     }
+
+    
 }
