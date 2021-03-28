@@ -6,5 +6,5 @@ using UnityEngine;
 public class LevelState : ScriptableObject
 {
     public int currentWave;
-
+    public int fuel;
 }

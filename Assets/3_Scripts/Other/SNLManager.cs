@@ -7,33 +7,70 @@ public class SNLManager : MonoBehaviour
     [SerializeField]
     private LevelState level;
 
-    public static SNLManager instance;
+    private static SNLManager instance;
 
+    bool saveExists;
+    GameObject tempSpawner;
 
-    //public int curWave;
-    [SerializeField]
-    public GameObject spawner;
-    public Script_Spawner spawnerScript;
-
-    private void Start()
+    private void Awake()
     {
-        spawnerScript = spawner.GetComponent<Script_Spawner>();
+        DontDestroyOnLoad(this.gameObject);
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+    public void Start()
+    {
+        saveExists = false;
+        
+        StartCoroutine(LookForSpawner());
+    }
+
 
     public void Save()
     {
+        GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
+        Script_Spawner spawnerScript = spawner.GetComponent<Script_Spawner>();
         level.currentWave = spawnerScript.waveNum;
-        
+        saveExists = true;
     }
 
     public void Load()
     {
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
-        for (int i = 0; i < spawners.Length; i++)
+        if(saveExists)
         {
-            Script_Spawner tempScriptRef = spawners[i].GetComponent<Script_Spawner>();
-            tempScriptRef.waveNum = level.currentWave;
+            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+            for (int i = 0; i < spawners.Length; i++)
+            {
+                Script_Spawner tempScriptRef = spawners[i].GetComponent<Script_Spawner>();
+                tempScriptRef.waveNum = level.currentWave;
+            }
         }
+        else
+        {
+            Debug.Log("Nothing has been previously saved");
+        }
+
     }
 
+    IEnumerator LookForSpawner()
+    {
+
+        if (tempSpawner == null)
+            tempSpawner = GameObject.FindGameObjectWithTag("Spawner");
+        else
+        {
+            Load();
+            StopCoroutine(LookForSpawner());
+
+        }
+        yield return new WaitForSeconds(0.2f);
+    }
 }
