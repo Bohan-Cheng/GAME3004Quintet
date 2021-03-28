@@ -5,22 +5,19 @@ using UnityEngine;
 public class DragDropSystem : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    public List<GameObject> SpawnItems;
 
-    GameObject PlacementItem;
-    bool InPlacement;
+    public GameObject PlacementItem;
     Vector3 HitPosition;
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Terrain")))
+        if (PlacementItem)
         {
-            HitPosition = hit.point;
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Terrain")))
             {
                 if (!InPlacement)
                 {
@@ -30,17 +27,14 @@ public class DragDropSystem : MonoBehaviour
                     PlacementItem.transform.Rotate(Vector3.up, Random.Range(0, 360));
                     Quests.placedTurrets += 1;
                 }
+                HitPosition = hit.point;
+                PlacementItem.transform.position = HitPosition;
             }
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+
+            if(Input.GetMouseButtonUp(0))
             {
-                InPlacement = false;
                 PlacementItem = null;
             }
-        }
-
-        if (InPlacement && PlacementItem)
-        {
-            PlacementItem.transform.position = HitPosition;
         }
     }
 

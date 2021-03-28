@@ -5,27 +5,36 @@ using UnityEngine.UI;
 
 public class FuelBehaviour : MonoBehaviour
 {
-    public static float fuelNumber = 500f;
-    public Text fuel;
+    public static int Electricity = 0;
+    public Text ElectricityText;
 
     private void Start()
     {
-        fuel = GetComponent<Text>();
+        ElectricityText = GetComponent<Text>();
     }
 
     private void Update()
     {
-        if(fuelNumber <= 0)
+        if(Electricity <= 0)
         {
-            print("Lights out!");
+            //print("Lights out!");
         }
 
         ReduceFuel();
-        fuel.text = "" + fuelNumber;
+        ElectricityText.text = "" + Electricity;
     }
 
     void ReduceFuel()
     {
-        fuelNumber -= Time.deltaTime;
+        //fuelNumber -= Time.deltaTime;
+    }
+
+    public static bool UsePower(int power)
+    {
+        if(power <= Electricity)
+        {
+            return true;
+        }
+        return false;
     }
 }

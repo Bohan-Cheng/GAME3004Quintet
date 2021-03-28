@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceCounter : MonoBehaviour
 {
-    public static int resourceNumber = 0;
+    public static int resourceNumber = 500;
     public Text resources;
 
     private void Start()

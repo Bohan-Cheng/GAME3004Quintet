@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
 
 	private bool isDead = false;
 
+	bool isAttacking = false;
+
 	void Start()
 	{
 		speed = startSpeed;
@@ -35,11 +38,16 @@ public class Enemy : MonoBehaviour
 		if (health <= 0 && !isDead)
 		{
 			Die();
-			FuelBehaviour.fuelNumber += 5.0f;
 			ScoreManager.playerScore += 7;
 			Quests.enemyCount += 1;
 		}
 	}
+
+	public void DoAttack()
+    {
+		isAttacking = true;
+		GetComponent<NavMeshAgent>().isStopped = true;
+    }
 
 	public void Slow(float pct)
 	{

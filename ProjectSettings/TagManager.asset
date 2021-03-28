@@ -11,6 +11,7 @@ TagManager:
   - Bullet
   - resource
   - Turret
+  - RangeVisualizer
   layers:
   - Default
   - TransparentFX
