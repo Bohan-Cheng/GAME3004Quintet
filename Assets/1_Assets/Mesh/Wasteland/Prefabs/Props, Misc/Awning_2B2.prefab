@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2304944}
   - component: {fileID: 2013340289}
   - component: {fileID: 2013340293}
+  - component: {fileID: 8616056770244016751}
   m_Layer: 0
   m_Name: Awning_2B2
   m_TagString: Base
@@ -113,6 +114,19 @@ MonoBehaviour:
   Health: 0
   HealthUI: {fileID: 1680883720}
   HealthSlider: {fileID: 84589410}
+--- !u!65 &8616056770244016751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.048932, y: 4.1866217, z: 4.950757}
+  m_Center: {x: 0.19077373, y: -1.3975132, z: -0.01890707}
 --- !u!1 &84589408
 GameObject:
   m_ObjectHideFlags: 0

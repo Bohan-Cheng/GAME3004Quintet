@@ -17,20 +17,24 @@ public class S_fence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fenceHealth <= 0)
-        {
-            enemy.GetComponent<Enemy>().StopAttack();
-            Destroy(gameObject);
-            fenceAlive = false;
-        }
+        
     }
 
     IEnumerator GetDamage()
     {
         while (fenceAlive == true)
         {
-            fenceHealth -= 1;
             yield return new WaitForSeconds(2);
+            fenceHealth -= 1;
+            if (fenceHealth <= 0)
+            {
+                if (enemy)
+                {
+                    enemy.GetComponent<Enemy>().StopAttack();
+                    Destroy(gameObject);
+                    fenceAlive = false;
+                }
+            }
         }
     }
 
