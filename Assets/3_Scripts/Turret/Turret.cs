@@ -120,8 +120,8 @@ public class Turret : MonoBehaviour
 
 	void Laser()
 	{
-		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-		targetEnemy.Slow(slowAmount);
+		//targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+		//targetEnemy.Slow(slowAmount);
 
 		//if (!lineRenderer.enabled)
 		//{
@@ -131,7 +131,7 @@ public class Turret : MonoBehaviour
 		//}
 
 		lineRenderer.SetPosition(0, new Vector3(firePoint.position.x, firePoint.position.y - 2f, firePoint.position.z - 1.75f));
-		lineRenderer.SetPosition(1, target.position);
+		lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y - 2f, target.position.z));
 
 		Vector3 dir = firePoint.position - target.position;
 
