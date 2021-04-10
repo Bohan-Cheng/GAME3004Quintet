@@ -89,9 +89,11 @@ public class Script_Spawner : MonoBehaviour
 
     IEnumerator DelayWaves()
     {
+        WaveDelayDisplayer timerRef = GameObject.Find("Timer").GetComponent<WaveDelayDisplayer>();
+        timerRef.TriggerTimerDisplay(2.0f);
         Debug.Log("wave finished");
         keepSpawning = false;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         keepSpawning = true;
     }
 
