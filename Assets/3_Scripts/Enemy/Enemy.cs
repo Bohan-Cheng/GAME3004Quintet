@@ -39,6 +39,18 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
+	public void TakeDoTDamage(float amount)
+    {
+		health -= amount / 500;
+
+		//healthBar.fillAmount = health / startHealth;
+
+		if (health <= 0 && !isDead)
+		{
+			Die();
+		}
+
+	}
 	public void Slow(float pct)
 	{
 		speed = startSpeed * (1f - pct);
