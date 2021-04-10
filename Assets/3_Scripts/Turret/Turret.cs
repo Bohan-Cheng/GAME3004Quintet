@@ -24,10 +24,10 @@ public class Turret : MonoBehaviour
 	public float slowAmount = .5f;
 
 	public LineRenderer lineRenderer;
-	public ParticleSystem impactEffect;
-	public Light impactLight;
+	//public ParticleSystem impactEffect;
+	//public Light impactLight;
 
-	[Header("Unity Setup Fields")]
+	[Header("Turret Setup")]
 
 	public string enemyTag = "Enemy";
 
@@ -39,6 +39,7 @@ public class Turret : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		lineRenderer.enabled = false;
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
 
@@ -60,11 +61,13 @@ public class Turret : MonoBehaviour
 
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
+			lineRenderer.enabled = true;
 			target = nearestEnemy.transform;
 			targetEnemy = nearestEnemy.GetComponent<Enemy>();
 		}
 		else
 		{
+			lineRenderer.enabled = false;
 			target = null;
 		}
 
@@ -80,8 +83,8 @@ public class Turret : MonoBehaviour
 				if (lineRenderer.enabled)
 				{
 					lineRenderer.enabled = false;
-					impactEffect.Stop();
-					impactLight.enabled = false;
+					//impactEffect.Stop();
+					//impactLight.enabled = false;
 				}
 			}
 
@@ -117,24 +120,24 @@ public class Turret : MonoBehaviour
 
 	void Laser()
 	{
-		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-		targetEnemy.Slow(slowAmount);
+		//targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+		//targetEnemy.Slow(slowAmount);
 
-		if (!lineRenderer.enabled)
-		{
-			lineRenderer.enabled = true;
-			impactEffect.Play();
-			impactLight.enabled = true;
-		}
+		//if (!lineRenderer.enabled)
+		//{
+		//	lineRenderer.enabled = true;
+		//	impactEffect.Play();
+		//	impactLight.enabled = true;
+		//}
 
-		lineRenderer.SetPosition(0, firePoint.position);
+		lineRenderer.SetPosition(0, new Vector3(firePoint.position.x, firePoint.position.y - 2f, firePoint.position.z - 1.75f));
 		lineRenderer.SetPosition(1, target.position);
 
 		Vector3 dir = firePoint.position - target.position;
 
-		impactEffect.transform.position = target.position + dir.normalized;
+		//impactEffect.transform.position = target.position + dir.normalized;
 
-		impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+		//impactEffect.transform.rotation = Quaternion.LookRotation(dir);
 	}
 
 	void Shoot()

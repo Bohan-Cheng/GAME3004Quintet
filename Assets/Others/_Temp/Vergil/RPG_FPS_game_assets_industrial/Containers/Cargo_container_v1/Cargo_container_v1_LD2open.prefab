@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010231696242}
   - component: {fileID: 23000013093344526}
   - component: {fileID: 64000011955652080}
+  - component: {fileID: 3494018982878045992}
   m_Layer: 0
   m_Name: Cargo_container_v1_LD2open
   m_TagString: Untagged
@@ -96,6 +97,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300026, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!208 &3494018982878045992
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010995220088}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4, y: 1.5000001, z: 1.5000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.66700006, y: 0, z: -0.112}
+  m_TimeToStationary: 0.5
 --- !u!1 &1000011519331060
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +125,7 @@ GameObject:
   - component: {fileID: 33000010596253882}
   - component: {fileID: 23000013817591240}
   - component: {fileID: 65000011769987596}
+  - component: {fileID: 7219225374440188688}
   m_Layer: 0
   m_Name: Cargo_container_v1_LD2doorL
   m_TagString: Untagged
@@ -191,6 +209,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10346853, y: 2.6797593, z: 1.4415468}
   m_Center: {x: 0.019726096, y: -0.00000011920929, z: 0.72072977}
+--- !u!208 &7219225374440188688
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011519331060}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.052, y: 1.34, z: 0.721}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.020000001, y: 0, z: 0.721}
+  m_TimeToStationary: 0.5
 --- !u!1 &1000013516874488
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +237,7 @@ GameObject:
   - component: {fileID: 33000012801953412}
   - component: {fileID: 23000010716011632}
   - component: {fileID: 65000012754014162}
+  - component: {fileID: 682660429467930714}
   m_Layer: 0
   m_Name: Cargo_container_v1_LD2doorR
   m_TagString: Untagged
@@ -286,6 +321,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10454035, y: 2.679758, z: 1.4415467}
   m_Center: {x: 0.020261407, y: 0.00000011920929, z: -0.7216599}
+--- !u!208 &682660429467930714
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013516874488}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.052, y: 1.34, z: 0.721}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.020000001, y: 0, z: -0.72200006}
+  m_TimeToStationary: 0.5
 --- !u!1 &1000013718478842
 GameObject:
   m_ObjectHideFlags: 0
