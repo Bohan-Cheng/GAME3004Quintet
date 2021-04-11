@@ -1,13 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Script_Spawner : MonoBehaviour
 {
-
-
-
-
     [SerializeField] GameObject EnemyPrefab;
     [SerializeField] GameObject Low_Poli_Enemy_Prefab;
     [SerializeField] GameObject BOSS;
@@ -20,10 +15,10 @@ public class Script_Spawner : MonoBehaviour
     float MaxZPos;
     public int waveNum = 1;
     bool keepSpawning = true;
-    int wave1 =  2;
-    int wave2 = 5;
-    int wave3 = 10;
-    int enemiesSpawned = 0;
+    int wave1 =  2;//number of enemies to be spawned during the wave
+    int wave2 = 5;//number of enemies to be spawned during the wave
+    int wave3 = 10;//number of enemies to be spawned during the wave
+    public int enemiesSpawned = 0;//number of enemies that have been spawned already
 
 
 
@@ -94,9 +89,11 @@ public class Script_Spawner : MonoBehaviour
 
     IEnumerator DelayWaves()
     {
+        WaveDelayDisplayer timerRef = GameObject.Find("Timer").GetComponent<WaveDelayDisplayer>();
+        timerRef.TriggerTimerDisplay(2.0f);
         Debug.Log("wave finished");
         keepSpawning = false;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         keepSpawning = true;
     }
 
