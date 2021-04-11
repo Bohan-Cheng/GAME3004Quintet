@@ -43,6 +43,7 @@ public class S_ItemInfo : MonoBehaviour
     {
         ResourceCounter.resourceNumber -= Cost;
         FuelBehaviour.Electricity -= EnergyCost;
+        Quests.placedTurrets += 1;
         HasPower = true;
     }
 
