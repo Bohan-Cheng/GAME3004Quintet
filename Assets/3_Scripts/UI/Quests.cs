@@ -9,9 +9,11 @@ public class Quests : MonoBehaviour
     public static bool killedBoss, playedEnemies, playedBoss, playedTurrets,
         buildNTurrets;
     public Text taskDisplay;
-
     string task;
     bool kill100Enemies;
+
+    public Text currentTurrent;
+    public Text currentKillEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +48,9 @@ public class Quests : MonoBehaviour
             buildNTurrets = true;
             playedTurrets = true;
         }
-        
+
+        currentTurrent.text = placedTurrets.ToString();
+        currentKillEnemy.text = enemyCount.ToString();
 
 
         taskDisplay.text = task;
