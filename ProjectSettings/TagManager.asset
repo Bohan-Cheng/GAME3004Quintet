@@ -4,8 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Spawner
+  - Base
   - Ground
   - Enemy
+  - Bullet
+  - resource
+  - Turret
+  - RangeVisualizer
   layers:
   - Default
   - TransparentFX

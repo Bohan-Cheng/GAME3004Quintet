@@ -20,13 +20,14 @@ public class Turret : MonoBehaviour
 	[Header("Use Laser")]
 	public bool useLaser = false;
 
-	public float damageOverTime = 1f;
+	public int damageOverTime = 30;
+	public float slowAmount = .5f;
 
 	public LineRenderer lineRenderer;
-	//public ParticleSystem impactEffect;
-	//public Light impactLight;
+	public ParticleSystem impactEffect;
+	public Light impactLight;
 
-	[Header("Turret Setup")]
+	[Header("Unity Setup Fields")]
 
 	public string enemyTag = "Enemy";
 
@@ -38,7 +39,6 @@ public class Turret : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		lineRenderer.enabled = false;
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
 
@@ -60,13 +60,11 @@ public class Turret : MonoBehaviour
 
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
-			lineRenderer.enabled = true;
 			target = nearestEnemy.transform;
 			targetEnemy = nearestEnemy.GetComponent<Enemy>();
 		}
 		else
 		{
-			lineRenderer.enabled = false;
 			target = null;
 		}
 
@@ -75,38 +73,40 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (target == null)
+		if (GetComponent<S_ItemInfo>().HasPower)
 		{
+			if (target == null)
+			{
+				if (useLaser)
+				{
+					if (lineRenderer.enabled)
+					{
+						lineRenderer.enabled = false;
+						//impactEffect.Stop();
+						impactLight.enabled = false;
+					}
+				}
+
+				return;
+			}
+
+			LockOnTarget();
+
 			if (useLaser)
 			{
-				if (lineRenderer.enabled)
-				{
-					lineRenderer.enabled = false;
-					//impactEffect.Stop();
-					//impactLight.enabled = false;
-				}
+				Laser();
 			}
-
-			return;
-		}
-
-		LockOnTarget();
-
-		if (useLaser)
-		{
-			Laser();
-		}
-		else
-		{
-			if (fireCountdown <= 0f)
+			else
 			{
-				Shoot();
-				fireCountdown = 1f / fireRate;
+				if (fireCountdown <= 0f)
+				{
+					Shoot();
+					fireCountdown = 1f / fireRate;
+				}
+
+				fireCountdown -= Time.deltaTime;
 			}
-
-			fireCountdown -= Time.deltaTime;
 		}
-
 	}
 
 	void LockOnTarget()
@@ -119,18 +119,18 @@ public class Turret : MonoBehaviour
 
 	void Laser()
 	{
-		targetEnemy.TakeDoTDamage(damageOverTime);
-		//targetEnemy.Slow(slowAmount);
+		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+		targetEnemy.Slow(slowAmount);
 
-		//if (!lineRenderer.enabled)
-		//{
-		//	lineRenderer.enabled = true;
-		//	impactEffect.Play();
-		//	impactLight.enabled = true;
-		//}
+		if (!lineRenderer.enabled)
+		{
+			lineRenderer.enabled = true;
+			//impactEffect.Play();
+			impactLight.enabled = true;
+		}
 
-		lineRenderer.SetPosition(0, new Vector3(firePoint.position.x, firePoint.position.y - 2f, firePoint.position.z - 1.75f));
-		lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y - 2f, target.position.z));
+		lineRenderer.SetPosition(0, firePoint.position);
+		lineRenderer.SetPosition(1, target.position);
 
 		Vector3 dir = firePoint.position - target.position;
 
@@ -144,7 +144,7 @@ public class Turret : MonoBehaviour
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-		if (bullet != null)
-			bullet.Seek(target);
+		//if (bullet != null)
+		//	bullet.Seek(target);
 	}
 }

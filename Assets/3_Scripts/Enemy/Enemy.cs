@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class Enemy : MonoBehaviour
 
 	public int worth = 50;
 
-	public GameObject deathEffect;
+	//public GameObject deathEffect;
 
 	//[Header("Unity Stuff")]
 	//public Image healthBar;
 
 	private bool isDead = false;
+
+	bool isAttacking = false;
 
 	void Start()
 	{
@@ -30,39 +33,40 @@ public class Enemy : MonoBehaviour
 	public void TakeDamage(float amount)
 	{
 		health -= amount;
-
 		//healthBar.fillAmount = health / startHealth;
 
 		if (health <= 0 && !isDead)
 		{
 			Die();
+			ScoreManager.playerScore += 7;
+			Quests.enemyCount += 1;
 		}
 	}
 
-	public void TakeDoTDamage(float amount)
+	public void DoAttack()
     {
-		health -= amount / 500;
+		isAttacking = true;
+		GetComponent<NavMeshAgent>().isStopped = true;
+    }
 
-		//healthBar.fillAmount = health / startHealth;
-
-		if (health <= 0 && !isDead)
-		{
-			Die();
-		}
-
+	public void StopAttack()
+	{
+		isAttacking = false;
+		GetComponent<NavMeshAgent>().isStopped = false;
 	}
+
 	public void Slow(float pct)
 	{
 		speed = startSpeed * (1f - pct);
 	}
 
-	void Die()
+	public void Die()
 	{
 		isDead = true;
+		Quests.killedBoss = true; 
 
-
-		GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(effect, 5f);
+		//GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+		//Destroy(effect, 5f);
 
 
 		Destroy(gameObject);
