@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 864826906105338370, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
       propertyPath: damageOverTime
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5540082069086661249, guid: 8da10f345ac0b8147aac86d8ec214397, type: 3}
       propertyPath: m_RootOrder

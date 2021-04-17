@@ -639,8 +639,8 @@ MonoBehaviour:
   range: 25
   bulletPrefab: {fileID: 2055225680582771299, guid: 09f30699e590ef84791005f5c0d5ba74, type: 3}
   fireRate: 0.5
-  useLaser: 0
-  damageOverTime: 30
+  useLaser: 1
+  damageOverTime: 15
   slowAmount: 0.5
   lineRenderer: {fileID: 7069179039945559188}
   impactEffect: {fileID: 0}
