@@ -83,7 +83,7 @@ public class Turret : MonoBehaviour
 					{
 						lineRenderer.enabled = false;
 						//impactEffect.Stop();
-						impactLight.enabled = false;
+						//impactLight.enabled = false;
 					}
 				}
 
@@ -126,11 +126,11 @@ public class Turret : MonoBehaviour
 		{
 			lineRenderer.enabled = true;
 			//impactEffect.Play();
-			impactLight.enabled = true;
+			//impactLight.enabled = true;
 		}
 
-		lineRenderer.SetPosition(0, firePoint.position);
-		lineRenderer.SetPosition(1, target.position);
+		lineRenderer.SetPosition(0, new Vector3(firePoint.position.x, firePoint.position.y - 2, firePoint.position.z - 1));
+		lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y - 2, target.position.z));
 
 		Vector3 dir = firePoint.position - target.position;
 
