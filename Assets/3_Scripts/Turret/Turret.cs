@@ -39,7 +39,7 @@ public class Turret : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
 
 	void UpdateTarget()
@@ -129,8 +129,9 @@ public class Turret : MonoBehaviour
 			//impactLight.enabled = true;
 		}
 
-		lineRenderer.SetPosition(0, new Vector3(firePoint.position.x, firePoint.position.y - 2, firePoint.position.z - 1));
-		lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y - 2, target.position.z));
+		Vector3 resolvedTargetPos = firePoint.InverseTransformPoint(target.position); resolvedTargetPos.y = 0.6f;
+		lineRenderer.SetPosition(1, resolvedTargetPos);
+		//lineRenderer.SetPosition(0, Vector3.zero); use this if Firepoint is dynamic
 
 		Vector3 dir = firePoint.position - target.position;
 
