@@ -36,6 +36,8 @@ public class Turret : MonoBehaviour
 
 	public Transform firePoint;
 
+	int counter = 0;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -92,7 +94,7 @@ public class Turret : MonoBehaviour
 
 			LockOnTarget();
 
-			if (useLaser)
+			if (useLaser && target)
 			{
 				Laser();
 			}
@@ -119,6 +121,14 @@ public class Turret : MonoBehaviour
 
 	void Laser()
 	{
+		counter++;
+		if (counter >= 30)
+        {
+			counter = 0;
+			ScoreManager.playerScore += 1;
+			ResourceCounter.resourceNumber += 1;
+        }
+
 		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
 		targetEnemy.Slow(slowAmount);
 
